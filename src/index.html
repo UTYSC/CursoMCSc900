@@ -17,8 +17,45 @@
         <span class="color-purple">M</span><span class="color-pink">u</span><span class="color-blue">n</span><span class="color-red">d</span><span class="color-green">o</span>
       </h1>
 
-      <!-- Botón que no hace nada -->
-      <button class="decorative-button">✨ Botón Especial ✨</button>
+      <!-- Botón que abre la galería -->
+      <button class="decorative-button" onclick="openGallery()">✨ Ver sus Fotos ✨</button>
+
+      <!-- Modal de Galería -->
+      <div id="gallery-modal" class="gallery-modal">
+        <div class="gallery-container">
+          <button class="close-btn" onclick="closeGallery()">&times;</button>
+          
+          <div class="gallery-header">
+            <h2>🌸 Nuestros Ángeles 🌸</h2>
+            <p class="gallery-subtitle">Dos almas que iluminaron nuestras vidas</p>
+          </div>
+          
+          <div class="gallery-content">
+            <div class="photo-wrapper">
+              <img src="gatuchis.jpg" alt="Pirruñis - Gatuchis" class="photo-image">
+              <div class="photo-info">
+                <p class="photo-label">Pirruñis 🐱 (Gatuchis)</p>
+                <p class="photo-description">Tu ronroneo fue música para nuestros oídos</p>
+              </div>
+            </div>
+            <div class="photo-wrapper">
+              <img src="petete.jpg" alt="Petete - Sr. Perrito" class="photo-image">
+              <div class="photo-info">
+                <p class="photo-label">Petete 🐕 (Sr. Perrito)</p>
+                <p class="photo-description">Tu lealtad fue un regalo sin igual</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-message">
+            <p class="main-message">Cada momento contigo fue un tesoro 💎</p>
+            <p class="closing-message">Aunque ya no estén aquí, viven eternamente en nuestros corazones</p>
+            <p class="footer-hearts">❤️ 🌺 ❤️</p>
+          </div>
+          
+          <p class="gallery-footer">Siempre en nuestros corazones... Siempre presentes 🕯️</p>
+        </div>
+      </div>
 
       <!-- Recuadro de homenaje -->
       <div class="memorial-box">
@@ -37,6 +74,25 @@
       </div>
     </div>
   </main>
+
+  <script>
+    function openGallery() {
+      document.getElementById('gallery-modal').classList.add('active');
+    }
+
+    function closeGallery() {
+      document.getElementById('gallery-modal').classList.remove('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('gallery-modal');
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeGallery();
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
